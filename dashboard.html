@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - XAI EDUTHON</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body class="dashboard-body">
+    <!-- Top Navigation -->
+    <nav class="dashboard-nav">
+        <div class="nav-left">
+            <button class="sidebar-toggle">
+                <span class="material-icons">menu</span>
+            </button>
+            <div class="nav-brand">
+                <img src="assets/university-logo.png" alt="Logo" class="nav-logo-dash">
+                <div class="logo-text">
+                    <h1>XAI EDUTHON</h1>
+                    <p>Smart AI University System</p>
+                </div>
+            </div>
+        </div>
+        <div class="nav-center">
+            <div class="search-bar">
+                <span class="material-icons">search</span>
+                <input type="text" placeholder="Search modules, features...">
+                <span class="ai-badge">AI</span>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="nav-icon-btn">
+                <span class="material-icons">notifications</span>
+                <span class="badge">5</span>
+            </button>
+            <button class="nav-icon-btn">
+                <span class="material-icons">settings</span>
+            </button>
+            <div class="user-profile">
+                <img src="https://ui-avatars.com/api/?name=John+Doe&background=302780&color=fff" alt="User">
+                <div class="user-info">
+                    <span class="user-name">John Doe</span>
+                    <span class="user-role">Student</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>Main Menu</h3>
+                    <ul class="sidebar-menu">
+                        <li class="active">
+                            <a href="#dashboard">
+                                <span class="material-icons">dashboard</span>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#modules">
+                                <span class="material-icons">apps</span>
+                                <span>All Modules</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#ai-features">
+                                <span class="material-icons">psychology</span>
+                                <span>AI Features</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Quick Access</h3>
+                    <ul class="sidebar-menu" id="quickAccessMenu">
+                        <!-- Will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <div class="welcome-content">
+                    <h2>Welcome Back! 👋</h2>
+                    <p>Your AI-powered campus is ready.</p>
+                </div>
+                <div class="ai-status">
+                    <span class="ai-active-badge">AI Active</span>
+                </div>
+            </div>
+
+            <!-- University Core Modules -->
+            <section class="dashboard-section">
+                <div class="section-header-dash">
+                    <div>
+                        <span class="material-icons section-icon">apps</span>
+                        <h2>University Core Modules</h2>
+                    </div>
+                </div>
+                <div class="modules-grid-dash" id="dashboardModules">
+                    <!-- Modules will be loaded here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="data.js?v=3"></script>
+    <script src="dashboard.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - XAI EDUTHON</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-left">
+            <div class="auth-brand">
+                <img src="assets/university-logo.png" alt="Logo">
+                <div>
+                    <h1>XAI EDUTHON</h1>
+                    <p>Smart AI University System</p>
+                </div>
+            </div>
+            <h2>Join Us Today!</h2>
+            <p>Start your journey with AI-powered education management.</p>
+            <div class="auth-features">
+                <div class="auth-feature">
+                    <span class="material-icons">check_circle</span>
+                    <span>Complete Management System</span>
+                </div>
+                <div class="auth-feature">
+                    <span class="material-icons">check_circle</span>
+                    <span>AI-Powered Features</span>
+                </div>
+                <div class="auth-feature">
+                    <span class="material-icons">check_circle</span>
+                    <span>24/7 Support</span>
+                </div>
+            </div>
+        </div>
+        <div class="auth-right">
+            <div class="auth-form-container">
+                <div class="auth-header">
+                    <h2>Create Account</h2>
+                    <p>Fill in your details to get started</p>
+                </div>
+                <form class="auth-form" id="signupForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <div class="input-group">
+                                <span class="material-icons">person</span>
+                                <input type="text" id="firstName" placeholder="First name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <div class="input-group">
+                                <span class="material-icons">person</span>
+                                <input type="text" id="lastName" placeholder="Last name" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-group">
+                            <span class="material-icons">email</span>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="university">University Name</label>
+                        <div class="input-group">
+                            <span class="material-icons">school</span>
+                            <input type="text" id="university" placeholder="Enter university name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <div class="input-group">
+                            <span class="material-icons">work</span>
+                            <select id="role" required>
+                                <option value="">Select your role</option>
+                                <option value="student">Student</option>
+                                <option value="faculty">Faculty</option>
+                                <option value="admin">Admin</option>
+                                <option value="staff">Staff</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-group">
+                            <span class="material-icons">lock</span>
+                            <input type="password" id="password" placeholder="Create a password" required>
+                            <span class="material-icons toggle-password">visibility_off</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="input-group">
+                            <span class="material-icons">lock</span>
+                            <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                            <span class="material-icons toggle-password">visibility_off</span>
+                        </div>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span>I agree to the <a href="#">Terms & Conditions</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                </form>
+                <div class="auth-divider">
+                    <span>OR</span>
+                </div>
+                <div class="social-login">
+                    <button class="btn-social">
+                        <img src="https://www.google.com/favicon.ico" alt="Google">
+                        Continue with Google
+                    </button>
+                    <button class="btn-social">
+                        <img src="https://www.microsoft.com/favicon.ico" alt="Microsoft">
+                        Continue with Microsoft
+                    </button>
+                </div>
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="login.html">Sign In</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="auth.js"></script>
+</body>
+</html>
