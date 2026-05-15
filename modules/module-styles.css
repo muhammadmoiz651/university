@@ -742,3 +742,37 @@
     }
 }
 
+
+/* Accreditation Logos */
+.accreditation-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    background: transparent;
+    margin-bottom: 20px;
+}
+
+.accreditation-logo {
+    height: 35px;
+    width: auto;
+    max-width: 70px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.accreditation-logo:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 640px) {
+    .accreditation-logos {
+        gap: 15px;
+    }
+    
+    .accreditation-logo {
+        height: 30px;
+        max-width: 60px;
+    }
+}
