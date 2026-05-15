@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management - XAI EDUTHON</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="module-styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body class="module-body">
+    <div class="module-hero" style="background: linear-gradient(135deg, #8B1A1A 0%, #AB2A2A 100%);">
+        <button class="back-button" onclick="window.location.href='../dashboard.html'">
+            <span class="material-icons">arrow_back</span>
+        </button>
+        
+        <div class="module-hero-content">
+            <div class="module-hero-icon">
+                <span class="material-icons">local_library</span>
+            </div>
+            <h1>Library Management</h1>
+            <p>Smart library operations</p>
+            
+            <div class="module-hero-badges">
+                <div class="hero-badge">
+                    <span class="material-icons">apps</span>
+                    <span>7 Sub Modules</span>
+                </div>
+                <div class="hero-badge ai">
+                    <span class="material-icons">psychology</span>
+                    <span>2 AI Features</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-content">
+        <div class="section-title">
+            <span class="material-icons">apps</span>
+            <h2>Sub Modules</h2>
+        </div>
+
+        <div class="submodules-grid-simple">
+            <div class="submodule-card-simple" onclick="alert('Opening Book Search...')">
+                <div class="submodule-icon-simple" style="background: #FFEBEE; color: #8B1A1A;">
+                    <span class="material-icons">search</span>
+                </div>
+                <span>Book Search</span>
+            </div>
+
+            <div class="submodule-card-simple" onclick="alert('Opening Issue / Return Books...')">
+                <div class="submodule-icon-simple" style="background: #FFEBEE; color: #8B1A1A;">
+                    <span class="material-icons">swap_horiz</span>
+                </div>
+                <span>Issue / Return Books</span>
+            </div>
+
+            <div class="submodule-card-simple" onclick="alert('Opening Digital Library...')">
+                <div class="submodule-icon-simple" style="background: #FFEBEE; color: #8B1A1A;">
+                    <span class="material-icons">cloud_download</span>
+                </div>
+                <span>Digital Library</span>
+            </div>
+
+            <div class="submodule-card-simple" onclick="alert('Opening Research Journals...')">
+                <div class="submodule-icon-simple" style="background: #FFEBEE; color: #8B1A1A;">
+                    <span class="material-icons">science</span>
+                </div>
+                <span>Research Journals</span>
+            </div>
+
+            <div class="submodule-card-simple" onclick="alert('Opening Seat Reservation...')">
+                <div class="submodule-icon-simple" style="background: #FFEBEE; color: #8B1A1A;">
+                    <span class="material-icons">event_seat</span>
+                </div>
+                <span>Seat Reservation</span>
+            </div>
+
+            <div class="submodule-card-simple" onclick="alert('Opening Fine Management...')">
+                <div class="submodule-icon-simple" style="background: #FFEBEE; color: #8B1A1A;">
+                    <span class="material-icons">price_check</span>
+                </div>
+                <span>Fine Management</span>
+            </div>
+
+            <div class="submodule-card-simple" onclick="alert('Opening Reading Analytics...')">
+                <div class="submodule-icon-simple" style="background: #FFEBEE; color: #8B1A1A;">
+                    <span class="material-icons">auto_graph</span>
+                </div>
+                <span>Reading Analytics</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-content">
+        <div class="section-title">
+            <span class="material-icons">psychology</span>
+            <h2>AI-Powered Features</h2>
+        </div>
+
+        <div class="ai-features-grid">
+            <div class="ai-feature-card">
+                <div class="ai-feature-icon" style="background: linear-gradient(135deg, #8B1A1A 0%, #AB2A2A 100%);">
+                    <span class="material-icons">recommend</span>
+                </div>
+                <h3>AI Book Recommendations</h3>
+                <p>Personalized reading suggestions</p>
+                <div class="ai-feature-stats">
+                    <span class="ai-stat">Smart Suggestions</span>
+                </div>
+            </div>
+
+            <div class="ai-feature-card">
+                <div class="ai-feature-icon" style="background: linear-gradient(135deg, #302780 0%, #4A3FA0 100%);">
+                    <span class="material-icons">saved_search</span>
+                </div>
+                <h3>AI Smart Search</h3>
+                <p>Natural language book discovery</p>
+                <div class="ai-feature-stats">
+                    <span class="ai-stat">Instant Results</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-content">
+        <div class="section-title">
+            <span class="material-icons">insights</span>
+            <h2>AI Insights & Recommendations</h2>
+        </div>
+
+        <div class="ai-insights-container">
+            <div class="ai-insight-card primary">
+                <div class="insight-header">
+                    <span class="material-icons">trending_up</span>
+                    <span class="insight-badge">High Priority</span>
+                </div>
+                <h3>1,234 Books Issued This Month</h3>
+                <p>AI shows 25% increase in library usage compared to last month.</p>
+                <button class="insight-action-btn">View Details</button>
+            </div>
+
+            <div class="ai-insight-card success">
+                <div class="insight-header">
+                    <span class="material-icons">celebration</span>
+                    <span class="insight-badge success">Success</span>
+                </div>
+                <h3>Top 10 Most Popular Books</h3>
+                <p>AI identified trending books based on student preferences.</p>
+                <button class="insight-action-btn">View List</button>
+            </div>
+
+            <div class="ai-insight-card warning">
+                <div class="insight-header">
+                    <span class="material-icons">warning</span>
+                    <span class="insight-badge warning">Action Needed</span>
+                </div>
+                <h3>45 Overdue Books</h3>
+                <p>AI recommends sending automated reminders to students.</p>
+                <button class="insight-action-btn">Send Reminders</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-content">
+        <div class="ai-chatbot-banner">
+            <div class="chatbot-icon">
+                <span class="material-icons">smart_toy</span>
+            </div>
+            <div class="chatbot-content">
+                <h3>Need Help? Ask Our AI Assistant</h3>
+                <p>Get instant answers about books, journals, reservations, and more</p>
+            </div>
+            <button class="chatbot-btn">
+                <span class="material-icons">chat</span>
+                <span>Start Chat</span>
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>

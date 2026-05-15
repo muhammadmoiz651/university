@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Module - XAI EDUTHON</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="module-styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body class="module-body">
+    <div class="module-hero" style="background: linear-gradient(135deg, #0F6B3E 0%, #1F8B5E 100%);">
+        <button class="back-button" onclick="window.location.href='../dashboard.html'">
+            <span class="material-icons">arrow_back</span>
+        </button>
+        
+        <div class="module-hero-content">
+            <div class="module-hero-icon">
+                <span class="material-icons">how_to_reg</span>
+            </div>
+            <h1>Attendance Module</h1>
+            <p>Track & manage attendance</p>
+            
+            <div class="module-hero-badges">
+                <div class="hero-badge">
+                    <span class="material-icons">apps</span>
+                    <span>6 Sub Modules</span>
+                </div>
+                <div class="hero-badge ai">
+                    <span class="material-icons">psychology</span>
+                    <span>3 AI Features</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-content">
+        <div class="section-title">
+            <span class="material-icons">apps</span>
+            <h2>Sub Modules</h2>
+        </div>
+
+        <div class="submodules-grid-simple">
+            <div class="submodule-card-simple" onclick="alert('Opening Daily Attendance...')">
+                <div class="submodule-icon-simple" style="background: #E8F5E9; color: #0F6B3E;">
+                    <span class="material-icons">today</span>
+                </div>
+                <span>Daily Attendance</span>
+            </div>
+
+            <div class="submodule-card-simple" onclick="alert('Opening Monthly Reports...')">
+                <div class="submodule-icon-simple" style="background: #E8F5E9; color: #0F6B3E;">
+                    <span class="material-icons">calendar_view_month</span>
+                </div>
+                <span>Monthly Reports</span>
+            </div>
+
+            <div class="submodule-card-simple" onclick="alert('Opening Leave Integration...')">
+                <div class="submodule-icon-simple" style="background: #E8F5E9; color: #0F6B3E;">
+                    <span class="material-icons">integration_instructions</span>
+                </div>
+                <span>Leave Integration</span>
+            </div>
+
+            <div class="submodule-card-simple" onclick="alert('Opening Absentee Alerts...')">
+                <div class="submodule-icon-simple" style="background: #E8F5E9; color: #0F6B3E;">
+                    <span class="material-icons">notifications_active</span>
+                </div>
+                <span>Absentee Alerts</span>
+            </div>
+
+            <div class="submodule-card-simple" onclick="alert('Opening Bulk Attendance Entry...')">
+                <div class="submodule-icon-simple" style="background: #E8F5E9; color: #0F6B3E;">
+                    <span class="material-icons">edit_note</span>
+                </div>
+                <span>Bulk Attendance Entry</span>
+            </div>
+
+            <div class="submodule-card-simple" onclick="alert('Opening Attendance Analytics...')">
+                <div class="submodule-icon-simple" style="background: #E8F5E9; color: #0F6B3E;">
+                    <span class="material-icons">bar_chart</span>
+                </div>
+                <span>Attendance Analytics</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-content">
+        <div class="section-title">
+            <span class="material-icons">psychology</span>
+            <h2>AI-Powered Features</h2>
+        </div>
+
+        <div class="ai-features-grid">
+            <div class="ai-feature-card">
+                <div class="ai-feature-icon" style="background: linear-gradient(135deg, #0F6B3E 0%, #1F8B5E 100%);">
+                    <span class="material-icons">psychology</span>
+                </div>
+                <h3>AI Attendance Intelligence</h3>
+                <p>Predict & prevent absenteeism</p>
+                <div class="ai-feature-stats">
+                    <span class="ai-stat">Smart Predictions</span>
+                </div>
+            </div>
+
+            <div class="ai-feature-card">
+                <div class="ai-feature-icon" style="background: linear-gradient(135deg, #302780 0%, #4A3FA0 100%);">
+                    <span class="material-icons">face</span>
+                </div>
+                <h3>AI Face Recognition</h3>
+                <p>Biometric attendance marking</p>
+                <div class="ai-feature-stats">
+                    <span class="ai-stat">Contactless</span>
+                </div>
+            </div>
+
+            <div class="ai-feature-card">
+                <div class="ai-feature-icon" style="background: linear-gradient(135deg, #8B1A1A 0%, #AB2A2A 100%);">
+                    <span class="material-icons">warning</span>
+                </div>
+                <h3>AI Dropout Prediction</h3>
+                <p>Early student dropout alerts</p>
+                <div class="ai-feature-stats">
+                    <span class="ai-stat">Early Warning</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-content">
+        <div class="section-title">
+            <span class="material-icons">insights</span>
+            <h2>AI Insights & Recommendations</h2>
+        </div>
+
+        <div class="ai-insights-container">
+            <div class="ai-insight-card primary">
+                <div class="insight-header">
+                    <span class="material-icons">trending_up</span>
+                    <span class="insight-badge">High Priority</span>
+                </div>
+                <h3>89% Average Attendance Rate</h3>
+                <p>AI shows consistent attendance patterns across all departments.</p>
+                <button class="insight-action-btn">View Details</button>
+            </div>
+
+            <div class="ai-insight-card success">
+                <div class="insight-header">
+                    <span class="material-icons">celebration</span>
+                    <span class="insight-badge success">Success</span>
+                </div>
+                <h3>Face Recognition Active</h3>
+                <p>AI biometric system successfully marking attendance for 95% of students.</p>
+                <button class="insight-action-btn">View Report</button>
+            </div>
+
+            <div class="ai-insight-card warning">
+                <div class="insight-header">
+                    <span class="material-icons">warning</span>
+                    <span class="insight-badge warning">Action Needed</span>
+                </div>
+                <h3>34 Students At Risk</h3>
+                <p>AI detected students with low attendance requiring intervention.</p>
+                <button class="insight-action-btn">Take Action</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-content">
+        <div class="ai-chatbot-banner">
+            <div class="chatbot-icon">
+                <span class="material-icons">smart_toy</span>
+            </div>
+            <div class="chatbot-content">
+                <h3>Need Help? Ask Our AI Assistant</h3>
+                <p>Get instant answers about attendance records, reports, analytics, and more</p>
+            </div>
+            <button class="chatbot-btn">
+                <span class="material-icons">chat</span>
+                <span>Start Chat</span>
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>

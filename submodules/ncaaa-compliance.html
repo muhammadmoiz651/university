@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCAAA Compliance - XAI EDUTHON</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="submodule-styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body class="dashboard-body">
+    <!-- Top Navigation -->
+    <nav class="dashboard-nav">
+        <div class="nav-left">
+            <button class="sidebar-toggle">
+                <span class="material-icons">menu</span>
+            </button>
+            <div class="nav-brand">
+                <img src="../assets/university-logo.png" alt="Logo" class="nav-logo-dash">
+                <div class="logo-text">
+                    <h1>XAI EDUTHON</h1>
+                    <p>Smart AI University System</p>
+                </div>
+            </div>
+        </div>
+        <div class="nav-center">
+            <div class="search-bar">
+                <span class="material-icons">search</span>
+                <input type="text" placeholder="Search in NCAAA Compliance...">
+                <span class="ai-badge">AI</span>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="nav-icon-btn">
+                <span class="material-icons">notifications</span>
+                <span class="badge">5</span>
+            </button>
+            <button class="nav-icon-btn">
+                <span class="material-icons">settings</span>
+            </button>
+            <div class="user-profile">
+                <img src="https://ui-avatars.com/api/?name=John+Doe&background=302780&color=fff" alt="User">
+                <div class="user-info">
+                    <span class="user-name">John Doe</span>
+                    <span class="user-role">Student</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>Quality Assurance</h3>
+                    <ul class="sidebar-menu">
+                        <li class="active">
+                            <a href="ncaaa-compliance.html">
+                                <span class="material-icons">task_alt</span>
+                                <span>NCAAA Compliance</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="abet-compliance.html">
+                                <span class="material-icons">verified</span>
+                                <span>ABET Compliance</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="course-reports.html">
+                                <span class="material-icons">description</span>
+                                <span>Course Reports</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="program-reports.html">
+                                <span class="material-icons">folder_open</span>
+                                <span>Program Reports</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="kpi-tracking.html">
+                                <span class="material-icons">trending_up</span>
+                                <span>KPI Tracking</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="qa-reports.html">
+                                <span class="material-icons">assessment</span>
+                                <span>QA Reports</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Quick Actions</h3>
+                    <ul class="sidebar-menu">
+                        <li>
+                            <a href="../dashboard.html">
+                                <span class="material-icons">dashboard</span>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#profile">
+                                <span class="material-icons">person</span>
+                                <span>Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#help">
+                                <span class="material-icons">help</span>
+                                <span>Help</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="../dashboard.html">Dashboard</a>
+                <span class="material-icons">chevron_right</span>
+                <a href="../dashboard.html">Quality Assurance</a>
+                <span class="material-icons">chevron_right</span>
+                <span>NCAAA Compliance</span>
+            </div>
+
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="page-header-content">
+                    <div class="page-icon" style="background: #1A5F7A;">
+                        <span class="material-icons">task_alt</span>
+                    </div>
+                    <div>
+                        <h1>NCAAA Compliance</h1>
+                        <p>National Commission for Academic Accreditation & Assessment</p>
+                    </div>
+                </div>
+                <button class="primary-btn" style="background: #1A5F7A;">
+                    <span class="material-icons">add</span>
+                    New Document
+                </button>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="stats-row">
+                <div class="stat-card-mini" style="border-left-color: #1A5F7A;">
+                    <div class="stat-mini-icon" style="background: #1A5F7A20; color: #1A5F7A;">
+                        <span class="material-icons">description</span>
+                    </div>
+                    <div class="stat-mini-info">
+                        <h4>Total Documents</h4>
+                        <p>156</p>
+                    </div>
+                </div>
+                <div class="stat-card-mini" style="border-left-color: #018137;">
+                    <div class="stat-mini-icon" style="background: #01813720; color: #018137;">
+                        <span class="material-icons">check_circle</span>
+                    </div>
+                    <div class="stat-mini-info">
+                        <h4>Completed</h4>
+                        <p>124</p>
+                    </div>
+                </div>
+                <div class="stat-card-mini" style="border-left-color: #FFA500;">
+                    <div class="stat-mini-icon" style="background: #FFA50020; color: #FFA500;">
+                        <span class="material-icons">pending</span>
+                    </div>
+                    <div class="stat-mini-info">
+                        <h4>In Progress</h4>
+                        <p>24</p>
+                    </div>
+                </div>
+                <div class="stat-card-mini" style="border-left-color: #302780;">
+                    <div class="stat-mini-icon" style="background: #30278020; color: #302780;">
+                        <span class="material-icons">psychology</span>
+                    </div>
+                    <div class="stat-mini-info">
+                        <h4>AI Insights</h4>
+                        <p>8</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NCAAA Standards -->
+            <section class="content-section">
+                <div class="section-header-sub">
+                    <h2>NCAAA Standards</h2>
+                    <button class="secondary-btn">
+                        <span class="material-icons">filter_list</span>
+                        Filter
+                    </button>
+                </div>
+
+                <div class="standards-grid">
+                    <div class="standard-card">
+                        <div class="standard-header">
+                            <span class="standard-number">01</span>
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                        <h3>Mission and Goals</h3>
+                        <p>Define and document institutional mission, goals, and objectives</p>
+                        <div class="standard-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%; background: #018137;"></div>
+                            </div>
+                            <span>100%</span>
+                        </div>
+                        <div class="standard-actions">
+                            <button class="icon-btn">
+                                <span class="material-icons">visibility</span>
+                            </button>
+                            <button class="icon-btn">
+                                <span class="material-icons">edit</span>
+                            </button>
+                            <button class="icon-btn">
+                                <span class="material-icons">download</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="standard-card">
+                        <div class="standard-header">
+                            <span class="standard-number">02</span>
+                            <span class="status-badge in-progress">In Progress</span>
+                        </div>
+                        <h3>Program Outcomes</h3>
+                        <p>Define and assess program learning outcomes</p>
+                        <div class="standard-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%; background: #FFA500;"></div>
+                            </div>
+                            <span>75%</span>
+                        </div>
+                        <div class="standard-actions">
+                            <button class="icon-btn">
+                                <span class="material-icons">visibility</span>
+                            </button>
+                            <button class="icon-btn">
+                                <span class="material-icons">edit</span>
+                            </button>
+                            <button class="icon-btn">
+                                <span class="material-icons">download</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="standard-card">
+                        <div class="standard-header">
+                            <span class="standard-number">03</span>
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                        <h3>Course Outcomes</h3>
+                        <p>Define and measure course learning outcomes</p>
+                        <div class="standard-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%; background: #018137;"></div>
+                            </div>
+                            <span>100%</span>
+                        </div>
+                        <div class="standard-actions">
+                            <button class="icon-btn">
+                                <span class="material-icons">visibility</span>
+                            </button>
+                            <button class="icon-btn">
+                                <span class="material-icons">edit</span>
+                            </button>
+                            <button class="icon-btn">
+                                <span class="material-icons">download</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="standard-card">
+                        <div class="standard-header">
+                            <span class="standard-number">04</span>
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                        <h3>CLO-PLO Mapping</h3>
+                        <p>Map course outcomes to program outcomes</p>
+                        <div class="standard-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%; background: #018137;"></div>
+                            </div>
+                            <span>100%</span>
+                        </div>
+                        <div class="standard-actions">
+                            <button class="icon-btn">
+                                <span class="material-icons">visibility</span>
+                            </button>
+                            <button class="icon-btn">
+                                <span class="material-icons">edit</span>
+                            </button>
+                            <button class="icon-btn">
+                                <span class="material-icons">download</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="standard-card">
+                        <div class="standard-header">
+                            <span class="standard-number">05</span>
+                            <span class="status-badge in-progress">In Progress</span>
+                        </div>
+                        <h3>Program Specification</h3>
+                        <p>Comprehensive program documentation</p>
+                        <div class="standard-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%; background: #FFA500;"></div>
+                            </div>
+                            <span>60%</span>
+                        </div>
+                        <div class="standard-actions">
+                            <button class="icon-btn">
+                                <span class="material-icons">visibility</span>
+                            </button>
+                            <button class="icon-btn">
+                                <span class="material-icons">edit</span>
+                            </button>
+                            <button class="icon-btn">
+                                <span class="material-icons">download</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="standard-card">
+                        <div class="standard-header">
+                            <span class="standard-number">06</span>
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                        <h3>Course Specifications</h3>
+                        <p>Detailed course documentation</p>
+                        <div class="standard-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%; background: #018137;"></div>
+                            </div>
+                            <span>100%</span>
+                        </div>
+                        <div class="standard-actions">
+                            <button class="icon-btn">
+                                <span class="material-icons">visibility</span>
+                            </button>
+                            <button class="icon-btn">
+                                <span class="material-icons">edit</span>
+                            </button>
+                            <button class="icon-btn">
+                                <span class="material-icons">download</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="content-section">
+                <div class="section-header-sub">
+                    <h2>Recent Activity</h2>
+                    <a href="#" class="view-all-link">View All</a>
+                </div>
+
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon" style="background: #01813720; color: #018137;">
+                            <span class="material-icons">check_circle</span>
+                        </div>
+                        <div class="activity-content">
+                            <h4>Course Report Approved</h4>
+                            <p>CS101 - Introduction to Programming course report has been approved</p>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon" style="background: #30278020; color: #302780;">
+                            <span class="material-icons">psychology</span>
+                        </div>
+                        <div class="activity-content">
+                            <h4>AI Insight Generated</h4>
+                            <p>New recommendations for improving CLO-PLO alignment</p>
+                            <span class="activity-time">5 hours ago</span>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon" style="background: #FFA50020; color: #FFA500;">
+                            <span class="material-icons">edit</span>
+                        </div>
+                        <div class="activity-content">
+                            <h4>Document Updated</h4>
+                            <p>Program Specification document has been updated by Dr. Ahmed</p>
+                            <span class="activity-time">1 day ago</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../dashboard.js"></script>
+</body>
+</html>

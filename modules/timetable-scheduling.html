@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable & Scheduling - XAI EDUTHON</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="module-styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body class="module-body">
+    <div class="module-hero" style="background: linear-gradient(135deg, #6B4423 0%, #8B6443 100%);">
+        <button class="back-button" onclick="window.location.href='../dashboard.html'">
+            <span class="material-icons">arrow_back</span>
+        </button>
+        
+        <div class="module-hero-content">
+            <div class="module-hero-icon">
+                <span class="material-icons">table_view</span>
+            </div>
+            <h1>Timetable & Scheduling</h1>
+            <p>Smart scheduling system</p>
+            
+            <div class="module-hero-badges">
+                <div class="hero-badge">
+                    <span class="material-icons">apps</span>
+                    <span>6 Sub Modules</span>
+                </div>
+                <div class="hero-badge ai">
+                    <span class="material-icons">psychology</span>
+                    <span>2 AI Features</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-content">
+        <div class="section-title">
+            <span class="material-icons">apps</span>
+            <h2>Sub Modules</h2>
+        </div>
+
+        <div class="submodules-grid-simple">
+            <div class="submodule-card-simple" onclick="alert('Opening Class Timetable...')">
+                <div class="submodule-icon-simple" style="background: #FFF3E0; color: #6B4423;">
+                    <span class="material-icons">view_week</span>
+                </div>
+                <span>Class Timetable</span>
+            </div>
+
+            <div class="submodule-card-simple" onclick="alert('Opening Exam Schedule...')">
+                <div class="submodule-icon-simple" style="background: #FFF3E0; color: #6B4423;">
+                    <span class="material-icons">event_note</span>
+                </div>
+                <span>Exam Schedule</span>
+            </div>
+
+            <div class="submodule-card-simple" onclick="alert('Opening Room Allocation...')">
+                <div class="submodule-icon-simple" style="background: #FFF3E0; color: #6B4423;">
+                    <span class="material-icons">meeting_room</span>
+                </div>
+                <span>Room Allocation</span>
+            </div>
+
+            <div class="submodule-card-simple" onclick="alert('Opening Faculty Scheduling...')">
+                <div class="submodule-icon-simple" style="background: #FFF3E0; color: #6B4423;">
+                    <span class="material-icons">person_search</span>
+                </div>
+                <span>Faculty Scheduling</span>
+            </div>
+
+            <div class="submodule-card-simple" onclick="alert('Opening Conflict Detection...')">
+                <div class="submodule-icon-simple" style="background: #FFF3E0; color: #6B4423;">
+                    <span class="material-icons">warning_amber</span>
+                </div>
+                <span>Conflict Detection</span>
+            </div>
+
+            <div class="submodule-card-simple" onclick="alert('Opening Schedule Export...')">
+                <div class="submodule-icon-simple" style="background: #FFF3E0; color: #6B4423;">
+                    <span class="material-icons">download</span>
+                </div>
+                <span>Schedule Export</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-content">
+        <div class="section-title">
+            <span class="material-icons">psychology</span>
+            <h2>AI-Powered Features</h2>
+        </div>
+
+        <div class="ai-features-grid">
+            <div class="ai-feature-card">
+                <div class="ai-feature-icon" style="background: linear-gradient(135deg, #6B4423 0%, #8B6443 100%);">
+                    <span class="material-icons">auto_fix_high</span>
+                </div>
+                <h3>AI Timetable Optimizer</h3>
+                <p>Conflict-free AI schedule generation</p>
+                <div class="ai-feature-stats">
+                    <span class="ai-stat">Zero Conflicts</span>
+                </div>
+            </div>
+
+            <div class="ai-feature-card">
+                <div class="ai-feature-icon" style="background: linear-gradient(135deg, #302780 0%, #4A3FA0 100%);">
+                    <span class="material-icons">insights</span>
+                </div>
+                <h3>AI Scheduling Insights</h3>
+                <p>Smart resource utilization analysis</p>
+                <div class="ai-feature-stats">
+                    <span class="ai-stat">Optimized Usage</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-content">
+        <div class="section-title">
+            <span class="material-icons">insights</span>
+            <h2>AI Insights & Recommendations</h2>
+        </div>
+
+        <div class="ai-insights-container">
+            <div class="ai-insight-card primary">
+                <div class="insight-header">
+                    <span class="material-icons">trending_up</span>
+                    <span class="insight-badge">High Priority</span>
+                </div>
+                <h3>100% Conflict-Free Schedules</h3>
+                <p>AI optimizer successfully generated schedules with zero conflicts.</p>
+                <button class="insight-action-btn">View Schedules</button>
+            </div>
+
+            <div class="ai-insight-card success">
+                <div class="insight-header">
+                    <span class="material-icons">celebration</span>
+                    <span class="insight-badge success">Success</span>
+                </div>
+                <h3>95% Room Utilization Rate</h3>
+                <p>AI analysis shows optimal use of classroom resources.</p>
+                <button class="insight-action-btn">View Report</button>
+            </div>
+
+            <div class="ai-insight-card warning">
+                <div class="insight-header">
+                    <span class="material-icons">warning</span>
+                    <span class="insight-badge warning">Action Needed</span>
+                </div>
+                <h3>Next Semester Planning Due</h3>
+                <p>AI recommends starting timetable generation for next semester.</p>
+                <button class="insight-action-btn">Start Planning</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-content">
+        <div class="ai-chatbot-banner">
+            <div class="chatbot-icon">
+                <span class="material-icons">smart_toy</span>
+            </div>
+            <div class="chatbot-content">
+                <h3>Need Help? Ask Our AI Assistant</h3>
+                <p>Get instant answers about timetables, scheduling, room allocation, and more</p>
+            </div>
+            <button class="chatbot-btn">
+                <span class="material-icons">chat</span>
+                <span>Start Chat</span>
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>
