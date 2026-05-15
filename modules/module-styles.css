@@ -18,7 +18,7 @@
     margin: 0;
     padding: 0;
     background: #F4F5FB;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     min-height: 100vh;
 }
 
@@ -365,52 +365,103 @@
 }
 
 .ai-feature-card {
-    background: #FFFFFF;
-    border-radius: 16px;
-    padding: 24px;
+    background: linear-gradient(135deg, #302780 0%, #4A3FA0 100%);
+    border-radius: 24px;
+    padding: 32px 28px;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
+    box-shadow: 0 4px 16px rgba(48, 39, 128, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    min-height: 220px;
+}
+
+.ai-feature-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    transition: all 0.4s ease;
+}
+
+.ai-feature-card::after {
+    content: '✨';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    z-index: 1;
+    filter: grayscale(100%) brightness(200%);
+    opacity: 0.4;
+}
+
+.ai-feature-card:hover::before {
+    transform: scale(1.5);
+}
+
+.ai-feature-card.ai-feature-green {
+    background: linear-gradient(135deg, #018137 0%, #01A347 100%);
+    box-shadow: 0 4px 16px rgba(1, 129, 55, 0.15);
 }
 
 .ai-feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    border-color: #302780;
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(48, 39, 128, 0.25);
+}
+
+.ai-feature-card.ai-feature-green:hover {
+    box-shadow: 0 12px 32px rgba(1, 129, 55, 0.25);
 }
 
 .ai-feature-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 14px;
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+    
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
 }
 
 .ai-feature-icon .material-icons {
-    font-size: 28px;
+    font-size: 40px;
     color: #FFFFFF;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .ai-feature-card h3 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
-    color: #0D0D0D;
+    color: #FFFFFF;
     margin: 0;
     line-height: 1.3;
+    position: relative;
+    z-index: 1;
 }
 
 .ai-feature-card p {
-    font-size: 13px;
-    color: #7B82A8;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
     margin: 0;
-    line-height: 1.5;
+    line-height: 1.6;
     flex-grow: 1;
+    position: relative;
+    z-index: 1;
 }
 
 .ai-feature-stats {

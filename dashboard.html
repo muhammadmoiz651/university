@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - XAI EDUTHON</title>
+    <link rel="icon" type="image/png" href="assets/university-logo.png">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="ai-chatbot.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body class="dashboard-body">
@@ -98,7 +100,7 @@
             </div>
 
             <!-- University Core Modules -->
-            <section class="dashboard-section">
+            <section class="dashboard-section" id="modules">
                 <div class="section-header-dash">
                     <div>
                         <span class="material-icons section-icon">apps</span>
@@ -109,10 +111,57 @@
                     <!-- Modules will be loaded here -->
                 </div>
             </section>
-        </main>
+
+            <!-- AI Features Section -->
+            <section class="dashboard-section" id="ai-features" style="display: none;">
+                <div class="section-header-dash">
+                    <div>
+                        <span class="material-icons section-icon">psychology</span>
+                        <h2>AI-Powered Features</h2>
+                    </div>
+                </div>
+                <div class="ai-features-grid-limited">
+                    <div class="ai-feature-card">
+                        <span class="material-icons">quiz</span>
+                        <h3>AI Quiz Generator</h3>
+                        <p>Generate custom quizzes instantly with AI</p>
+                    </div>
+
+                    <div class="ai-feature-card ai-feature-green">
+                        <span class="material-icons">analytics</span>
+                        <h3>Predictive Analytics</h3>
+                        <p>AI-powered insights for better decisions</p>
+                    </div>
+
+                    <div class="ai-feature-card">
+                        <span class="material-icons">school</span>
+                        <h3>Smart Learning Paths</h3>
+                        <p>Personalized learning recommendations</p>
+                    </div>
+
+                    <div class="ai-feature-card ai-feature-green">
+                        <span class="material-icons">psychology</span>
+                        <h3>AI Attendance System</h3>
+                        <p>Face recognition based attendance tracking</p>
+                    </div>
+
+                    <div class="ai-feature-card">
+                        <span class="material-icons">auto_awesome</span>
+                        <h3>Smart Grading</h3>
+                        <p>Automated assignment evaluation with AI</p>
+                    </div>
+
+                    <div class="ai-feature-card ai-feature-green">
+                        <span class="material-icons">recommend</span>
+                        <h3>AI Career Guidance</h3>
+                        <p>Personalized career recommendations for students</p>
+                    </div>
+                </div>
+            </section>
     </div>
 
     <script src="data.js?v=9"></script>
     <script src="dashboard.js?v=9"></script>
+    <script src="ai-chatbot.js"></script>
 </body>
 </html>

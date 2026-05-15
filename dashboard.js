@@ -17,10 +17,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const dashboardMain = document.querySelector('.dashboard-main');
     
     if (sidebarToggle && sidebar) {
-        sidebarToggle.addEventListener('click', function(e) {
+        // Function to toggle sidebar
+        const toggleSidebar = function(e) {
+            e.preventDefault();
             e.stopPropagation();
+            
+            console.log('Toggle clicked'); // Debug log
+            
             sidebar.classList.toggle('active');
             dashboardBody.classList.toggle('sidebar-open');
+            
+            console.log('Sidebar active:', sidebar.classList.contains('active')); // Debug log
             
             // Toggle dashboard main margin for desktop
             if (window.innerWidth > 1024) {
@@ -32,7 +39,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     dashboardMain.style.width = 'calc(100% - 280px)';
                 }
             }
-        });
+        };
+        
+        // Add both click and touch event listeners
+        sidebarToggle.addEventListener('click', toggleSidebar);
+        sidebarToggle.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            toggleSidebar(e);
+        }, { passive: false });
+        
+        // Ensure toggle button is visible and clickable
+        sidebarToggle.style.cursor = 'pointer';
+        sidebarToggle.style.pointerEvents = 'auto';
     }
     
     // Close sidebar when clicking outside on mobile/tablet
@@ -868,3 +886,33 @@ function handleQuickAccess(option) {
             break;
     }
 }
+
+
+// Sidebar Navigation
+document.querySelectorAll('.sidebar-menu a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        
+        // Remove active class from all links
+        document.querySelectorAll('.sidebar-menu li').forEach(li => li.classList.remove('active'));
+        
+        // Add active class to clicked link's parent
+        this.parentElement.classList.add('active');
+        
+        // Show/hide sections based on href
+        if (href === '#dashboard' || href === '#modules') {
+            document.getElementById('modules').style.display = 'block';
+            document.getElementById('ai-features').style.display = 'none';
+        } else if (href === '#ai-features') {
+            document.getElementById('modules').style.display = 'none';
+            document.getElementById('ai-features').style.display = 'block';
+        }
+        
+        // Close sidebar on mobile after selection
+        if (window.innerWidth <= 1024) {
+            document.querySelector('.sidebar').classList.remove('active');
+            document.querySelector('.dashboard-body').classList.remove('sidebar-open');
+        }
+    });
+});
