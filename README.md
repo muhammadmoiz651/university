@@ -188,3 +188,49 @@ Website is **100% complete** with all requested changes:
 
 **Server Running**: http://localhost:8000
 **Status**: ✅ COMPLETE & READY TO USE!
+
+
+## 🔑 API Configuration
+
+### Groq API Setup
+The AI Quiz Generator uses Groq API for generating intelligent quiz questions.
+
+#### API Key Configuration:
+1. **Configuration File**: `config.js`
+2. **API Key**: Stored in `config.js`
+3. **API URL**: `https://api.groq.com/openai/v1/chat/completions`
+
+#### Files Structure:
+```
+├── .gitignore          # Prevents sensitive files from being committed
+├── config.js           # Configuration file (stores API key)
+└── ai-chatbot.js       # Uses API key from config.js
+```
+
+#### Security:
+- ✅ API key stored in `config.js`
+- ✅ `.gitignore` configured to exclude sensitive files
+- ✅ `ai-chatbot.js` loads API key from CONFIG object
+- ✅ Fallback to demo mode if API fails
+
+#### To Update API Key:
+1. Open `config.js`
+2. Update `GROQ_API_KEY` value
+3. Save and refresh browser
+
+**Note**: For production, use environment variables on your backend server. Frontend JavaScript cannot securely use `.env` files.
+
+#### Features:
+- ✅ **Random Quiz Generation**: Each quiz is unique
+- ✅ **Multiple Subjects**: AI, Data Structures, Database Management
+- ✅ **Difficulty Levels**: Easy, Medium, Hard
+- ✅ **Demo Mode**: Works even without API key
+- ✅ **Randomized Demo**: Demo questions are shuffled each time
+
+#### Quiz Generator Features:
+- Generate 5, 10, or 15 questions
+- Choose from multiple subjects
+- Select difficulty level
+- AI-powered question generation
+- Instant results and scoring
+- Beautiful UI with animations

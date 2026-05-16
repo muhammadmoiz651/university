@@ -1,6 +1,11 @@
 // AI Quiz Generator with Groq API Integration
-const GROQ_API_KEY = 'gsk_LFp1BhkjxfmLeL6Ded32WGdyb3FYNDtSmvlzj004uyvftj6KMZNYYE';
-const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
+// API Configuration loaded from config.js
+const GROQ_API_KEY = typeof CONFIG !== 'undefined' ? CONFIG.GROQ_API_KEY : '';
+const GROQ_API_URL = typeof CONFIG !== 'undefined' ? CONFIG.GROQ_API_URL : 'https://api.groq.com/openai/v1/chat/completions';
+
+// Debug: Check if API key is loaded
+console.log('API Key loaded:', GROQ_API_KEY ? 'Yes (length: ' + GROQ_API_KEY.length + ')' : 'No');
+console.log('API URL:', GROQ_API_URL);
 
 class AIQuizGenerator {
     constructor() {
@@ -36,7 +41,7 @@ class AIQuizGenerator {
                             </button>
                             <div class="quiz-info">
                                 <h3>AI Quiz Generator</h3>
-                                <p>Powered by Gemini AI</p>
+                                <p>Powered by Groq AI</p>
                             </div>
                         </div>
                         <button class="quiz-ai-badge">
@@ -49,7 +54,7 @@ class AIQuizGenerator {
                         <!-- Generate Quiz Card -->
                         <div class="generate-quiz-card">
                             <h2>Generate AI Quiz</h2>
-                            <p>Configure your quiz and let Gemini AI generate intelligent questions instantly.</p>
+                            <p>Configure your quiz and let Groq AI generate intelligent questions instantly.</p>
                             <div class="quiz-features">
                                 <span class="feature-badge">
                                     <span class="material-icons">check_circle</span>
@@ -233,7 +238,7 @@ class AIQuizGenerator {
             <!-- Generate Quiz Card -->
             <div class="generate-quiz-card">
                 <h2>Generate AI Quiz</h2>
-                <p>Configure your quiz and let Gemini AI generate intelligent questions instantly.</p>
+                <p>Configure your quiz and let Groq AI generate intelligent questions instantly.</p>
                 <div class="quiz-features">
                     <span class="feature-badge">
                         <span class="material-icons">check_circle</span>
@@ -731,7 +736,19 @@ class AIQuizGenerator {
     }
 
     async callGroqAPI() {
-        const prompt = `Generate ${this.quizConfig.numQuestions} multiple choice questions about ${this.quizConfig.subject} at ${this.quizConfig.difficulty} difficulty level. 
+        if (!GROQ_API_KEY) {
+            throw new Error('Groq API key is missing. Make sure config.js is loaded before ai-chatbot.js.');
+        }
+
+        // Add timestamp and random seed for variety
+        const timestamp = Date.now();
+        const randomSeed = Math.floor(Math.random() * 10000);
+        
+        const prompt = `Generate ${this.quizConfig.numQuestions} UNIQUE and DIVERSE multiple choice questions about ${this.quizConfig.subject} at ${this.quizConfig.difficulty} difficulty level. 
+        
+        IMPORTANT: Create completely NEW questions each time. Do NOT repeat common questions. Use creative scenarios and real-world applications.
+        Random Seed: ${randomSeed}
+        Timestamp: ${timestamp}
         
         Format each question as:
         Q: [Question]
@@ -741,9 +758,10 @@ class AIQuizGenerator {
         D) [Option D]
         Correct: [A/B/C/D]
         
-        Make questions educational and relevant to university students.`;
+        Make questions educational, diverse, and relevant to university students. Cover different aspects and subtopics.`;
 
         try {
+            console.log('Using model: openai/gpt-oss-120b');
             const response = await fetch(GROQ_API_URL, {
                 method: 'POST',
                 headers: {
@@ -751,117 +769,198 @@ class AIQuizGenerator {
                     'Authorization': `Bearer ${GROQ_API_KEY}`
                 },
                 body: JSON.stringify({
-                    model: 'mixtral-8x7b-32768',
+                    model: 'openai/gpt-oss-120b',
                     messages: [
                         { role: 'user', content: prompt }
                     ],
-                    temperature: 0.7,
-                    max_tokens: 2000
+                    temperature: 1
                 })
             });
 
-            if (!response.ok) {
+            if (response.ok) {
+                const data = await response.json();
+                console.log('Quiz generated successfully!');
+                return data.choices[0].message.content;
+            } else {
                 const errorData = await response.json().catch(() => ({}));
-                console.error('API Error Details:', errorData);
-                
-                // If 401, API key is invalid - use demo mode
-                if (response.status === 401) {
-                    console.warn('API Key invalid or expired. Using demo mode.');
-                    return this.generateDemoQuiz();
-                }
-                
-                throw new Error(`API Error: ${response.status}`);
+                console.error('API Error:', errorData);
+                console.warn('Using demo mode due to API error.');
+                return this.generateDemoQuiz();
             }
-
-            const data = await response.json();
-            return data.choices[0].message.content;
         } catch (error) {
-            console.error('Groq API Error:', error);
-            // Fallback to demo mode
+            console.error('API Request Error:', error);
+            console.warn('Using demo mode due to network error.');
             return this.generateDemoQuiz();
         }
     }
 
     generateDemoQuiz() {
-        // Demo quiz for when API is not available
-        const demoQuizzes = {
-            'Artificial Intelligence': `Q: What is the primary goal of Artificial Intelligence?
+        // Expanded demo quiz bank with multiple questions per subject
+        const demoQuizBank = {
+            'Artificial Intelligence': [
+                `Q: What is the primary goal of Artificial Intelligence?
 A) To replace human workers
 B) To create systems that can perform tasks requiring human intelligence
 C) To make computers faster
 D) To reduce software costs
-Correct: B
-
-Q: Which of the following is a type of machine learning?
+Correct: B`,
+                `Q: Which of the following is a type of machine learning?
 A) Supervised Learning
 B) Random Learning
 C) Fixed Learning
 D) Static Learning
-Correct: A
-
-Q: What does NLP stand for in AI?
+Correct: A`,
+                `Q: What does NLP stand for in AI?
 A) New Language Processing
 B) Natural Language Processing
 C) Neural Language Programming
 D) Network Language Protocol
-Correct: B
-
-Q: Which algorithm is commonly used for classification tasks?
+Correct: B`,
+                `Q: Which algorithm is commonly used for classification tasks?
 A) Linear Regression
 B) Decision Trees
 C) Bubble Sort
 D) Quick Sort
-Correct: B
-
-Q: What is a neural network inspired by?
+Correct: B`,
+                `Q: What is a neural network inspired by?
 A) Computer circuits
 B) Human brain
 C) Mathematical equations
 D) Database systems
 Correct: B`,
+                `Q: What is deep learning?
+A) Learning at night
+B) Machine learning with multiple layers
+C) Surface level learning
+D) Quick learning
+Correct: B`,
+                `Q: What is reinforcement learning?
+A) Learning by rewards and penalties
+B) Learning by memorization
+C) Learning by reading
+D) Learning by watching
+Correct: A`,
+                `Q: What is computer vision?
+A) Computer screen quality
+B) AI field focused on image understanding
+C) Computer graphics
+D) Screen resolution
+Correct: B`
+            ],
             
-            'Data Structures': `Q: What is the time complexity of binary search?
+            'Data Structures': [
+                `Q: What is the time complexity of binary search?
 A) O(n)
 B) O(log n)
 C) O(n²)
 D) O(1)
-Correct: B
-
-Q: Which data structure uses LIFO principle?
+Correct: B`,
+                `Q: Which data structure uses LIFO principle?
 A) Queue
 B) Stack
 C) Array
 D) Tree
-Correct: B
-
-Q: What is the worst-case time complexity of Quick Sort?
+Correct: B`,
+                `Q: What is the worst-case time complexity of Quick Sort?
 A) O(n log n)
 B) O(n)
 C) O(n²)
 D) O(log n)
-Correct: C
-
-Q: Which data structure is best for implementing a priority queue?
+Correct: C`,
+                `Q: Which data structure is best for implementing a priority queue?
 A) Array
 B) Linked List
 C) Heap
 D) Stack
-Correct: C
-
-Q: What is a complete binary tree?
+Correct: C`,
+                `Q: What is a complete binary tree?
 A) A tree with all nodes having two children
 B) A tree where all levels are filled except possibly the last
 C) A tree with only one node
 D) A tree with no children
+Correct: B`,
+                `Q: What is a hash table?
+A) A table made of hash
+B) A data structure for fast key-value lookups
+C) A sorting algorithm
+D) A type of array
+Correct: B`,
+                `Q: What is the space complexity of merge sort?
+A) O(1)
+B) O(log n)
+C) O(n)
+D) O(n²)
+Correct: C`,
+                `Q: Which traversal visits root node first?
+A) Inorder
+B) Postorder
+C) Preorder
+D) Level order
+Correct: C`
+            ],
+            
+            'Database Management': [
+                `Q: What does SQL stand for?
+A) Structured Query Language
+B) Simple Query Language
+C) Standard Query Language
+D) System Query Language
+Correct: A`,
+                `Q: What is a primary key?
+A) The first key in database
+B) A unique identifier for records
+C) A password
+D) A foreign key
+Correct: B`,
+                `Q: What is normalization?
+A) Making data normal
+B) Organizing data to reduce redundancy
+C) Deleting data
+D) Backing up data
+Correct: B`,
+                `Q: What is a foreign key?
+A) A key from another country
+B) A key that references primary key in another table
+C) A backup key
+D) An encrypted key
+Correct: B`,
+                `Q: What is ACID in databases?
+A) A chemical property
+B) Properties ensuring reliable transactions
+C) A type of database
+D) A query language
+Correct: B`,
+                `Q: What is an index in database?
+A) A table of contents
+B) A structure to speed up data retrieval
+C) A type of query
+D) A backup file
+Correct: B`,
+                `Q: What is a JOIN operation?
+A) Combining tables based on related columns
+B) Adding new records
+C) Deleting records
+D) Updating records
+Correct: A`,
+                `Q: What is a transaction?
+A) A bank operation
+B) A sequence of database operations
+C) A type of table
+D) A query result
 Correct: B`
+            ]
         };
 
         const subject = this.quizConfig.subject;
-        const demoQuiz = demoQuizzes[subject] || demoQuizzes['Artificial Intelligence'];
+        const questionBank = demoQuizBank[subject] || demoQuizBank['Artificial Intelligence'];
         
-        // Return only the requested number of questions
-        const questions = demoQuiz.split('\n\n');
-        return questions.slice(0, this.quizConfig.numQuestions).join('\n\n');
+        // Shuffle questions randomly
+        const shuffled = questionBank.sort(() => Math.random() - 0.5);
+        
+        // Select random questions based on numQuestions
+        const selectedQuestions = shuffled.slice(0, this.quizConfig.numQuestions);
+        
+        return selectedQuestions.join('\n\n');
     }
 }
 
@@ -1035,6 +1134,10 @@ class AIChatbot {
     }
 
     async callGrokAPI(userMessage) {
+        if (!GROQ_API_KEY) {
+            throw new Error('Groq API key is missing. Make sure config.js is loaded before ai-chatbot.js.');
+        }
+
         const systemPrompt = `You are an AI assistant for XAI EDUTHON, a comprehensive university management system. 
         You help students, faculty, and staff with information about:
         - 12 core modules (Student, Faculty, Admin, HR, Finance, Library, Attendance, Placement, Research, Timetable, QA, Hostel)
@@ -1045,14 +1148,14 @@ class AIChatbot {
         
         Be helpful, concise, and friendly. Provide accurate information about the platform.`;
 
-        const response = await fetch(GROK_API_URL, {
+        const response = await fetch(GROQ_API_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${GROK_API_KEY}`
+                'Authorization': `Bearer ${GROQ_API_KEY}`
             },
             body: JSON.stringify({
-                model: 'grok-beta',
+                model: 'openai/gpt-oss-120b',
                 messages: [
                     { role: 'system', content: systemPrompt },
                     { role: 'user', content: userMessage }
@@ -1146,10 +1249,7 @@ class AIChatbot {
     }
 }
 
-// Initialize chatbot when DOM is ready (DISABLED - Only Quiz Generator is active)
-// document.addEventListener('DOMContentLoaded', () => {
-//     // Check if we're on index page (not dashboard)
-//     if (!document.querySelector('.dashboard-body')) {
-//         new AIChatbot();
-//     }
-// });
+// Initialize chatbot when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    new AIChatbot();
+});

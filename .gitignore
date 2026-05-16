@@ -1,0 +1,21 @@
+# Configuration files with sensitive data
+config.js
+
+# Node modules (if using Node.js backend)
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Build files
+dist/
+build/
