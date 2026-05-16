@@ -1,7 +1,8 @@
 // AI Quiz Generator with Groq API Integration
 // API Configuration loaded from config.js
 const GROQ_API_KEY = typeof CONFIG !== 'undefined' ? CONFIG.GROQ_API_KEY : '';
-const GROQ_API_URL = typeof CONFIG !== 'undefined' ? CONFIG.GROQ_API_URL : 'https://api.groq.com/openai/v1/chat/completions';
+const GROQ_API_URL = typeof CONFIG !== 'undefined' ? CONFIG.GROQ_API_URL : '/.netlify/functions/groq';
+const USE_DIRECT_GROQ_API = GROQ_API_URL.includes('api.groq.com');
 
 // Debug: Check if API key is loaded
 console.log('API Key loaded:', GROQ_API_KEY ? 'Yes (length: ' + GROQ_API_KEY.length + ')' : 'No');
@@ -736,7 +737,7 @@ class AIQuizGenerator {
     }
 
     async callGroqAPI() {
-        if (!GROQ_API_KEY) {
+        if (USE_DIRECT_GROQ_API && !GROQ_API_KEY) {
             throw new Error('Groq API key is missing. Make sure config.js is loaded before ai-chatbot.js.');
         }
 
@@ -762,12 +763,17 @@ class AIQuizGenerator {
 
         try {
             console.log('Using model: openai/gpt-oss-120b');
+            const headers = {
+                'Content-Type': 'application/json'
+            };
+
+            if (USE_DIRECT_GROQ_API) {
+                headers.Authorization = `Bearer ${GROQ_API_KEY}`;
+            }
+
             const response = await fetch(GROQ_API_URL, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${GROQ_API_KEY}`
-                },
+                headers,
                 body: JSON.stringify({
                     model: 'openai/gpt-oss-120b',
                     messages: [
@@ -1134,7 +1140,7 @@ class AIChatbot {
     }
 
     async callGrokAPI(userMessage) {
-        if (!GROQ_API_KEY) {
+        if (USE_DIRECT_GROQ_API && !GROQ_API_KEY) {
             throw new Error('Groq API key is missing. Make sure config.js is loaded before ai-chatbot.js.');
         }
 
@@ -1148,12 +1154,17 @@ class AIChatbot {
         
         Be helpful, concise, and friendly. Provide accurate information about the platform.`;
 
+        const headers = {
+            'Content-Type': 'application/json'
+        };
+
+        if (USE_DIRECT_GROQ_API) {
+            headers.Authorization = `Bearer ${GROQ_API_KEY}`;
+        }
+
         const response = await fetch(GROQ_API_URL, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${GROQ_API_KEY}`
-            },
+            headers,
             body: JSON.stringify({
                 model: 'openai/gpt-oss-120b',
                 messages: [
